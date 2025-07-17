@@ -6,7 +6,7 @@
 
 This project AutoBlog-AI is built using Python, Flask, Langchain, and RAG (Retrieval-Augmented Generation) based of Large Language Model (LLM). This project allows users to upload any document (PDF, DOCX, TXT), and automatically generates a summarized blog post using advanced AI techniques.
 
-# Features
+## Features
 
 - **Document Upload**: Users can upload documents via a simple web interface.
 - **Automated Blog Generation**: Converts document content into a well-structured blog post.

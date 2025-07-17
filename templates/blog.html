@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Context</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body class="blog-body">
+    
+    <div class="blog-generator" id="blog-generator">
+            {% if summary %}
+                {{ summary|safe }}
+            {% else %}
+                <p> Still processing</p>
+            {% endif %}
+    </div>
+
+    <div class="container blog-container" id="blogContainer">
+        
+        
+            <form action="/submit-context" method="post" id="contextForm">
+               
+                <div class="form-group">
+                        <div class="context-collapse">
+                            <h3>Your Context/Comments:</h3>
+                            <div class="add-context-section">
+                                <button type="button" class="toggle-button" id="toggleBlogContainer">
+                                <span class="icon">&#9650;</span>
+                                <span class="text icon">Collapse</span>
+                                </button>
+                            </div>
+                        </div>
+                    <textarea id="contextText" name="contextText" rows="4" placeholder="Share your thoughts, add more information..."></textarea>
+                </div>
+                <button type="submit" class="submit-context-button">Submit Context</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const blogContainer = document.getElementById('blogContainer');
+        const toggleButton = document.getElementById('toggleBlogContainer');
+        const contextForm = document.getElementById('contextForm');
+        const toggleIcon = toggleButton.querySelector('.icon');
+        const toggleText = toggleButton.querySelector('.text');
+
+        // Initial state: expanded
+        let isExpanded = true; 
+
+        toggleButton.addEventListener('click', function() {
+            if (isExpanded) {
+                // Collapse the container
+                contextForm.style.maxHeight = '0';
+                contextForm.style.opacity = '1';
+                contextForm.style.overflow = 'hidden';
+                blogContainer.classList.remove('expanded'); // Optional: for CSS transitions
+                blogContainer.classList.add('collapsed'); // Optional: for CSS transitions
+                toggleIcon.innerHTML = '&#9660;'; // Down arrow
+                toggleText.textContent = 'Expand';
+            } else {
+                // Expand the container
+                contextForm.style.maxHeight = contextForm.scrollHeight + 'px'; // Set max-height to content's scrollHeight for smooth transition
+                contextForm.style.opacity = '1';
+                contextForm.style.overflow = 'visible';
+                blogContainer.classList.remove('collapsed');
+                blogContainer.classList.add('expanded');
+                toggleIcon.innerHTML = '&#9650;'; // Up arrow
+                toggleText.textContent = 'Collapse';
+            }
+            isExpanded = !isExpanded; // Toggle the state
+        });
+
+        // Ensure the form starts in the correct state if you want it collapsed by default
+        // If you want it expanded by default, keep isExpanded = true; and remove this block
+        window.addEventListener('DOMContentLoaded', (event) => {
+             // To ensure the max-height is set correctly on page load if starting collapsed
+             // Or if you want it expanded, make sure it has enough max-height initially.
+             contextForm.style.maxHeight = contextForm.scrollHeight + 'px'; // Set initial max-height
+             contextForm.style.transition = 'max-height 0.3s ease-out, opacity 0.3s ease-out'; // Add transition
+        });
+
+    </script>
+
+</body>
+</html>

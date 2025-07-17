@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UPLOAD YOUR DOCUMENT</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="document">Choose PDF:</label>
+                <input type="file" id="document" name="document" accept=".pdf,.doc,.docx" required> 
+            </div>
+            <div class="form-group">
+                <label for="keyword">Relevant Keywords/Text For Blog Generation:</label>
+                <input type="text" id="keyword" name="keyword" placeholder="ex: tokenization, mapping, etc." required>
+            </div>
+            <div class="form-group">
+                <label for="audience">Target Audience:</label>
+                <select id="audience" name="audience" required>
+                    <option value="">Select Audience</option>
+                    <option value="general">General</option>
+                    <option value="students">Students</option>
+                    <option value="professionals">Professionals</option>
+                    <option value="researchers">Researchers</option>
+                </select>
+            </div>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

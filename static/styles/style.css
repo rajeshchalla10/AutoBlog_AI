@@ -1,0 +1,219 @@
+/* General body styles */
+body {
+    font-family: "Raleway", sans-serif; /* A clear and widely available sans-serif font */
+    background: linear-gradient(to bottom right, #010124, #373799); /* Pleasant gradient background */
+    
+    display: flex; /* Centers the form horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the body fills the entire viewport height */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding in element's total width and height */
+}
+
+.blog-body {
+padding-bottom: 220px;
+background: linear-gradient(to bottom right, #0e0e5c, #26268a);
+}
+
+.blog-body h1,h2{
+    color: #f0f2f5; /* Light text color for better contrast against the dark background */
+}
+
+/* Container styling */
+.container {
+    background-color: #fffaf5; /* White background for the form container */
+    padding: 40px;
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 500px; /* Limits the form width for better readability on large screens */
+    margin: 20px;
+}
+
+.container h1 {
+    font-size: 1.8em;
+    text-align: center; /* Center the heading text */
+}
+
+.blog-generator{
+     max-width: 1000px;
+     color: #f0f2f5;
+     line-height: 1.6; 
+     /* Dark blue text color for better readability */
+}
+
+/* Blog-specific styles for positioning at the bottom and fixing it */
+.blog-container {
+    padding: 20px;
+    max-width: 600px; /* You can keep this or remove it depending on your desired width */
+    position: fixed; /* Fix the container to the viewport */
+    bottom: 5%; /* Position it at the bottom of the viewport */
+    left: 50%; /* Start positioning from the middle horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+    width: calc(100% - 40px); /* Adjust width to account for body padding */
+    margin: 0 auto; /* Reset margin after using fixed positioning */
+    z-index: 100; /* Ensures it stays on top of other content */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+
+
+
+
+/* Heading style */
+h1 {
+    text-align: center;
+    color: #021024;
+    margin-bottom: 30px;
+}
+
+/* Form group (label + input/select) styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    display: block; /* Places label above the input field */
+    margin-bottom: 8px;
+    color: #021024;
+    font-weight: bold;
+}
+
+/* Input and select element styling */
+input[type="text"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #021024;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for focus effects */
+}
+
+/* Input/select focus effect */
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus {
+    border-color: #021024; /* Green border on focus */
+    outline: none; /* Removes default outline */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Green glow on focus */
+}
+
+/* Custom styling for the file input button */
+input[type="file"]::file-selector-button {
+    background-color: #5454D4; /* Green background for the file selector button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicates it's clickable */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+/* File input button hover effect */
+input[type="file"]::file-selector-button:hover {
+    background-color: #292983; /* Darker green on hover */
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    display: block; /* Makes the button take full width */
+    width: 100%;
+    padding: 15px;
+    background-color: #5454D4; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition and slight scale on hover */
+}
+
+/* Submit button hover effect */
+button[type="submit"]:hover {
+    background-color: #292983; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) { /* Adjusts styling for smaller screens */
+    .container {
+        padding: 25px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"],
+    input[type="file"],
+    select,
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}
+
+h3{
+    margin-top: 0;
+}
+/* In your style.css file */
+textarea {
+    resize: none; /* This will disable both horizontal and vertical resizing */
+    min-height: 10px; /* Optional: Sets a minimum height for the textarea */ 
+    /* Other existing textarea styles */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.context-collapse{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+ .context-collapse h3{
+  color: #021024;  
+}
+
+
+
+
+#contextForm {
+    /* Set initial max-height for the collapsed (slightly bigger) state */
+    min-height: 50px;
+    
+    opacity: 1; /* Keep it visible even when collapsed */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #5454D4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+.toggle-button:hover {
+    background-color: #4343c4;
+}

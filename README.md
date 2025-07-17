@@ -29,7 +29,7 @@ This project AutoBlog-AI is built using Python, Flask, Langchain, and RAG (Retri
 2. **Document is processed** and split into meaningful chunks.
 3. **RAG pipeline retrieves** relevant information from the document.
 4. **LLM generates** a blog post draft based on the document's content.
-5. **Final blog post** is presented in markup language for users to use or further editing.
+5. **Final blog post** is presented in markup language for users to use or further edit.
 
 ## Getting Started
 
@@ -40,18 +40,17 @@ This project AutoBlog-AI is built using Python, Flask, Langchain, and RAG (Retri
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/document-to-blog-assistant.git
-cd document-to-blog-assistant
+git clone https://github.com/rajeshchalla10/AutoBlog_AI.git
+cd AutoBlog_AI
 pip install -r requirements.txt
 ```
-
 ### Running the App
 
 ```bash
-python app.py
+python test_app.py
 ```
 
-Open [http://localhost:5000](http://localhost:5000) in your browser to access the web interface.
+Open [http://localhost:5000](http://localhost:5000) (or supported port by the application).
 
 
 ## Project Structure
@@ -59,7 +58,7 @@ Open [http://localhost:5000](http://localhost:5000) in your browser to access th
 ```
 document-to-blog-assistant/
 │
-├── app.py                 # Flask server and endpoints
+├── test_app.py            # Flask server and endpoints
 ├── templates/             # HTML templates for web UI
 ├── static/                # Static files (CSS, JS)
 ├── requirements.txt       # Python dependencies
